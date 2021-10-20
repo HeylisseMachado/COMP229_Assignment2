@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    <%= title %></title>
+    <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./@fortawesome/fontawsome-free/css/all.min.css">
+    <link rel="stylesheet" href="./content/app.css">
+  </head>
+  <body>
+
+    <!-- Header // path to connect with the header.ejs <%- include components/header.ejs %> -->
+    <%- include('components/header.ejs'); %>
+    
+
+
+    
+    <!-- Header -->
+
+
+    <!-- Main content-->
+    <main> 
+      <%- include('content/' + page + '.ejs'); %>
+     
+    </main>
+     <!-- Main content-->
+
+    <!-- Footer // path to conect with the footer.ejs -->
+  
+     <%- include components/footer.ejs %>
+    
+   
+      <!-- Footer -->
+
+
+<!--Script this is equivalent to--> 
+
+<script src="./scripts/app.js"></script>   <!--<script src="client/scripts/app.js"></script>-->
+<script src="./bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./jquery/dist/jquery.min.js"></script>
+
+
+  </body> 
+
+  <!-- Heylisse Machado -- ID: 301155124 -->
+</html>
