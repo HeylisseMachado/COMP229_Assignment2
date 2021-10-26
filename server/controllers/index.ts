@@ -1,7 +1,7 @@
 import express from 'express';
 
 // This is the logic that I ned to send data to the view 
-// render the pages 
+// render the ejs pages 
 export function DisplayHomePage(req: express.Request, res: express.Response, next: express.NextFunction) {
     res.render('index', { title: 'Home', page: 'home' });
 }
