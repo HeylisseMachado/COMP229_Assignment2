@@ -9,7 +9,7 @@ import debug from 'debug';
 debug('assignment1-heylissemachado:server');
 import createError from 'http-errors';
 
-import app from './app';
+import app from './server/config/app';
 
 /**
  * Get port from environment and store in Express.

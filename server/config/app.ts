@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser";
 import logger from 'morgan';
 import mongoose from 'mongoose';
 
-import indexRouter from './routes/index';
+import indexRouter from '../routes/index';
 
 // instanciate mongo 
 mongoose.connect('mongodb://localhost:27017/shoes')
@@ -20,15 +20,15 @@ db.once('open', function(){
 const app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'client')));
-app.use(express.static(path.join(__dirname, 'node_modules'))); // add node_module as static sontent
+app.use(express.static(path.join(__dirname, '../../client')));
+app.use(express.static(path.join(__dirname, '../../node_modules'))); // add node_module as static sontent
 
 // router midleware , this is where we start using our router 
 app.use('/', indexRouter);
