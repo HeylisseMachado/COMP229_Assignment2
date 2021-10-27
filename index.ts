@@ -9,7 +9,7 @@ import debug from 'debug';
 debug('assignment1-heylissemachado:server');
 import createError from 'http-errors';
 
-import { app } from './server/config/app';
+import  app  from './server/config/app';
 
 /**
  * Get port from environment and store in Express.
@@ -52,9 +52,8 @@ function normalizePort(val: string): string | number | boolean {
   return false;
 }
 
-/**
- * Event listener for HTTP server "error" event.
- */
+
+ // Event listener for HTTP server "error" event.
 
 function onError(error:createError.HttpError) {
   if (error.syscall !== 'listen') {
@@ -80,9 +79,9 @@ function onError(error:createError.HttpError) {
   }
 }
 
-/**
- * Event listener for HTTP server "listening" event.
- */
+
+ //Event listener for HTTP server "listening" event.
+ 
 
 function onListening() {
   var addr = server.address();

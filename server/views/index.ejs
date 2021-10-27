@@ -3,31 +3,29 @@
   <head>
     <title>
     <%= title %></title>
-    <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./@fortawesome/fontawsome-free/css/all.min.css">
-    <link rel="stylesheet" href="./content/app.css">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/@fortawesome/fontawsome-free/css/all.min.css">
+    <link rel="stylesheet" href="/content/app.css">
   </head>
   <body>
 
     <!-- Header // path to connect with the header.ejs <%- include components/header.ejs %> -->
-    <%- include('components/header.ejs'); %>
+    <%- include('./components/header.ejs'); %>
     
 
-
-    
     <!-- Header -->
 
 
     <!-- Main content-->
     <main> 
-      <%- include('content/' + page + '.ejs'); %>
+      <%- include('./content/' + page + '.ejs'); %>
      
     </main>
      <!-- Main content-->
 
     <!-- Footer // path to conect with the footer.ejs -->
   
-     <%- include components/footer.ejs %>
+     <%- include ./components/footer.ejs %>
     
    
       <!-- Footer -->
