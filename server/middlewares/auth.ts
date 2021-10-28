@@ -20,10 +20,12 @@ const loginFunction: any = async (
 
     const user: any = await UserModel.findOne({ username });
 
+    //check if we find a user 
     if (!user) {
         return done(null, false, { message: "User does not exist" });
     }
 
+   // check if the password is valid 
     if (!(await user.isValidPassword(password))) {
         return done(null, false, { message: "Password is not valid" });
     }
@@ -77,14 +79,18 @@ const signupFunction = async (
     }
 };
 
+// instructing passpot to use the loging and signup funtions
 passport.use('login', new LocalStrategy(strategyOptions, loginFunction));
 passport.use('signup', new LocalStrategy(strategyOptions, signupFunction));
 
+// To checl if the user is created 
 export const isLoggedIn = (req: Request, res: Response, done: (error: any, user?: any, options?: IVerifyOptions) => void) => {
+
+    // if there is no user return message Unauthorised
     if (!req.user) {
         return res.status(401).json({ msg: 'Unauthorized' })
     }
-
+    // I the user exist return user
     done(null, req.user);
 }
 
